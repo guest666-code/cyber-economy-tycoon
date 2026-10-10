@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Economy Tycoon</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Üst Bilgi / Skor Paneli -->
+    <header class="header">
+        <h1>CYBER ECONOMY TYCOON</h1>
+        <div class="stats-container">
+            <div class="stat-box">
+                <span class="stat-label">ByteCoin:</span>
+                <span id="score" class="stat-value">0</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-label">Saniyede Kazanç (CPS):</span>
+                <span id="cps" class="stat-value">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Ana Oyun Alanı -->
+    <main class="main-container">
+        <!-- Sol Panel: Yükseltmeler -->
+        <section class="panel upgrades-panel">
+            <h2>Yükseltmeler</h2>
+            <div id="upgrades-list" class="list-container">
+                <!-- JavaScript ile doldurulacak -->
+            </div>
+        </section>
+
+        <!-- Orta Alan: Tıklama / Hack Alanı -->
+        <section class="clicker-section">
+            <div id="clicker-btn" class="cyber-core">
+                <span>HACKLE</span>
+                <div class="core-ring"></div>
+            </div>
+            <p class="hint">Merkeze tıklayarak ByteCoin kas!</p>
+        </section>
+
+        <!-- Sağ Panel: Shopier Gerçek Mağaza Paketleri -->
+        <section class="panel store-panel">
+            <h2>Gerçek Mağaza (Shopier)</h2>
+            <p class="store-desc">Özel paketler satın alarak gücünü katla!</p>
+            <div id="store-list" class="list-container">
+                <!-- Shopier Ürünleri -->
+                <div class="store-item">
+                    <div class="item-info">
+                        <h3>VIP Hacker Paketi</h3>
+                        <p>+50 CPS & Anında 10.000 ByteCoin</p>
+                        <span class="price">49.99 TL</span>
+                    </div>
+                    <!-- Buraya kendi Shopier ürün linkini yapıştıracaksın -->
+                    <a href="https://www.shopier.com/SERINIZI_BURAYA_YAZIN" target="_blank" class="shopier-btn">Satın Al</a>
+                </div>
+                <div class="store-item">
+                    <div class="item-info">
+                        <h3>God Mode Auto-Rig</h3>
+                        <p>+500 CPS & Sınırsız Güç</p>
+                        <span class="price">150.00 TL</span>
+                    </div>
+                    <a href="https://www.shopier.com/SERINIZI_BURAYA_YAZIN" target="_blank" class="shopier-btn">Satın Al</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Google AdSense Reklam Alanı Örneği -->
+    <footer class="ad-footer">
+        <div class="ad-banner">
+            <!-- AdSense Kodunu Buraya Ekleyebilirsin -->
+            <span>[ Google AdSense Reklam Alanı ]</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

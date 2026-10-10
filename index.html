@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Economy Tycoon</title>
+
+    <!-- PWA Manifest & Tema Rengi -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#ff007f">
+
+    <!-- Google AdSense Doğrulama Kodu -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3817729086327108" crossorigin="anonymous"></script>
+
+    <!-- CSS Stilleri -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Üst Bilgi / Skor Paneli -->
+    <header class="header">
+        <h1>CYBER ECONOMY TYCOON</h1>
+        <div class="stats-container">
+            <div class="stat-box">
+                <span class="stat-label">ByteCoin:</span>
+                <span id="score" class="stat-value">0</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-label">CPS:</span>
+                <span id="cps" class="stat-value">0</span>
+            </div>
+        </div>
+        <!-- Kullanıcı Profili ve Giriş Butonu -->
+        <div class="user-profile">
+            <span id="user-display-name">Misafir</span>
+            <button id="auth-action-btn" class="auth-btn">Giriş Yap</button>
+        </div>
+    </header>
+
+    <!-- Giriş / Kayıt Modal (Pop-up) Ekranı -->
+    <div id="auth-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <span id="close-modal" class="close-btn">&times;</span>
+            <h2 id="modal-title">GİRİŞ YAP</h2>
+
+            <!-- 1. Seçenek: Google ile Hızlı Giriş -->
+            <button id="google-login-btn" class="google-btn">
+                <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google Logo">
+                Google ile Hızlı Giriş Yap
+            </button>
+
+            <div class="divider">
+                <span>VEYA</span>
+            </div>
+
+            <!-- 2. Seçenek: İsim / E-Posta / Şifre Formu -->
+            <form id="email-auth-form">
+                <div class="input-group" id="name-group" style="display: none;">
+                    <label>Kullanıcı Adı</label>
+                    <input type="text" id="auth-name" placeholder="Örn: Purpleguy">
+                </div>
+                <div class="input-group">
+                    <label>E-Posta</label>
+                    <input type="email" id="auth-email" placeholder="ornek@mail.com" required>
+                </div>
+                <div class="input-group">
+                    <label>Şifre</label>
+                    <input type="password" id="auth-password" placeholder="••••••••" required>
+                </div>
+                <button type="submit" id="submit-auth-btn" class="submit-btn">Giriş Yap</button>
+            </form>
+
+            <p class="toggle-auth">
+                <span id="toggle-text">Hesabın yok mu?</span>
+                <a href="#" id="toggle-auth-btn">Kayıt Ol</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Ana Oyun Alanı -->
+    <main class="main-container">
+        <!-- Sol Panel: Yükseltmeler -->
+        <section class="panel upgrades-panel">
+            <h2>Yükseltmeler</h2>
+            <div id="upgrades-list" class="list-container">
+                <!-- JavaScript ile doldurulacak -->
+            </div>
+        </section>
+
+        <!-- Orta Alan: Tıklama / Hack Alanı -->
+        <section class="clicker-section">
+            <div id="clicker-btn" class="cyber-core">
+                <span>HACKLE</span>
+                <div class="core-ring"></div>
+            </div>
+            <p class="hint">Merkeze tıklayarak ByteCoin kas!</p>
+        </section>
+
+        <!-- Sağ Panel: Shopier Gerçek Mağaza Paketleri -->
+        <section class="panel store-panel">
+            <h2>Gerçek Mağaza (Shopier)</h2>
+            <div id="store-list" class="list-container">
+                <div class="store-item">
+                    <div class="item-info">
+                        <h3>VIP Hacker Paketi</h3>
+                        <p>+50 CPS & Anında 10.000 ByteCoin</p>
+                        <span class="price">49.99 TL</span>
+                    </div>
+                    <a href="https://www.shopier.com/URUN_LINKINIZ" target="_blank" class="shopier-btn">Satın Al</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Google AdSense Reklam Alanı -->
+    <footer class="ad-footer">
+        <div class="ad-banner">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-3817729086327108"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </footer>
+
+    <!-- Service Worker Kaydı (PWA Çevrimdışı Çalışma) -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(reg => console.log('PWA Service Worker Aktif!', reg))
+            .catch(err => console.log('PWA Kayıt Hatası:', err));
+        });
+      }
+    </script>
+
+    <!-- Ana Oyun Mantığı (Modüler) -->
+    <script type="module" src="game.js"></script>
+</body>
+</html>
